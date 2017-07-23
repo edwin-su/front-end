@@ -11,8 +11,8 @@
 <body>
     <script type="text/javascript">
         var Counter = function () {
-            var privateCounter = 0;
-            function privateFunctionChangeBy(val) {
+            var privateCounter = 0; // Can not be accessed out of the object
+            function privateFunctionChangeBy(val) { // Can not be accessed out of the object
                 privateCounter += val;
             }
 
