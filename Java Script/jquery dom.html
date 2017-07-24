@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="myP">123</div>
+    <div class="myP">456</div>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(".myP").append("<h6>append</h6>");
+        $(".myP").prepend("<h6>prepend</h6>");
+        $(".myP").after("<h6>after</h6>");
+        $(".myP").wrap("<div></div>");
+    </script>
+</body>
+
+</html>
