@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" id="myButton" value="click" />
+    <input type="button" id="jqueryButton" value="jqueryClick" />
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        var button = document.getElementById("myButton");
+        var handler = function(){
+            console.log("hello");
+        }
+
+        var handler2 = function(){
+            console.log("222");
+        }
+        button.addEventListener("click", handler);
+        button.addEventListener("click", handler);
+
+        var jqueryButton = $("#jqueryButton");
+        jqueryButton.on("click", handler);
+        jqueryButton.on("click", handler);
+    </script>
+</body>
+
+</html>
