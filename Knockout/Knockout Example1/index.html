@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input data-bind="value:name,valueUpdate:'input',event:{change:autoSave}" />
+        <p>Your name:
+            <!--ko text: name-->
+            <!--/ko-->
+        </p>
+    </form>
+    <script src="knockout.js"></script>
+    <script type="text/javascript">
+        var user = {};
+
+        user.name = ko.observable();
+
+        user.autoSave = function () {
+            alert(user.name())
+        }
+
+        ko.applyBindings(user, document.querySelector('body'))
+    </script>
+</body>
+
+</html>
