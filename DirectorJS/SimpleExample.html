@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="director.js"></script>
+    <script type="text/javascript">
+        var author = function(){
+            console.log("author");
+        };
+
+        var books = function(){
+            console.log("book");
+        };
+
+        var viewBook = function(bookid){
+            console.log("viewBook: book id is "+ bookid);
+        };
+
+        var routes = {
+            '/author':author,
+            '/books':[books, function(){
+                console.log("an inline route handler.");
+            }],
+            '/books/view/:bookid':viewBook
+        };
+
+        var router = Router(routes);
+        router.init();
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li><a href="#/author">author</a></li>
+        <li><a href="#/books">books</a></li>
+        <li><a href="#/books/view/10">viewbook</a></li>
+    </ul>
+</body>
+
+</html>
